@@ -17,8 +17,10 @@ def admin_get():
     else:
         if sys.version_info[0] == 3:
             ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)
+            sys.exit()
         else:#in python2.x
             ctypes.windll.shell32.ShellExecuteW(None, u"runas", (sys.executable), (__file__), None, 1)
+            sys.exit()
 
 
 def find_and_delete_key(key_str):
